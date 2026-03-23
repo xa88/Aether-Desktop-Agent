@@ -40,4 +40,4 @@ Every successful operation is stored in ADA's semantic memory. It learns from it
 ---
 
 ## 📄 License
-MIT License - Developed by Antigravity.
+MIT License - Developed by xa88.
