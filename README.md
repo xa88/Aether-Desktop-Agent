@@ -1,65 +1,73 @@
 # 🛰️ Aether Desktop Agent (ADA)
 
-> **The first distributed, visually-aware, and self-evolving autonomous OS controller — engineered across 25 development phases.**
+**A next-generation autonomous desktop AI agent — built to perceive, control, and automate your entire OS environment.**
 
 [![License: GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Platform: Windows](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)](https://github.com/xa88/Aether-Desktop-Agent/releases)
 [![Developer: xa88](https://img.shields.io/badge/Developer-xa88-purple.svg)](https://github.com/xa88)
 
----
-
-## 🌟 What is ADA?
-
-**Aether Desktop Agent** is not just an AI assistant — it is a complete autonomous OS intelligence layer. Built on a Rust-powered core orchestrator and an Electron + React frontend, ADA can **see your screen**, **control your mouse and keyboard**, **write and execute code**, **manage secrets**, **coordinate multiple AI agents in a swarm**, and **evolve its own logic over time**.
-
-**Over 25 development phases** of rigorous engineering have produced a system capable of running end-to-end multi-agent workflows entirely autonomously.
+> 🇨🇳 [查看中文介绍 (Chinese README)](./README_ZH.md)
 
 ---
 
-## 🚀 Feature Breakdown: Phase 1–22
+## What is ADA?
 
-| Phase | Feature |
-|-------|---------|
-| **1** | Core Rust Workspace — Tool API, Orchestrator, Executor, Policy Engine |
-| **2** | File System Adapter — secure atomic writes, quarantine, path normalization |
-| **3** | Shell Adapter — sandboxed command execution with stdout/stderr streaming |
-| **4** | Git Adapter — branch, commit, diff, blame via native libgit2 bindings |
-| **5** | Web Search Adapter — real-time search via Tavily/Serper APIs |
-| **6** | Electron Frontend — React UI with Monaco Editor, XTerm.js, Chat, IDE |
-| **7** | Dual-Model Orchestration — Director (GPT-4o) + Worker (Phi-3/Llama-3) |
-| **8** | Audit & Replay Engine — complete JSONL log of every autonomous action |
-| **9** | Token-Aware Context Compression — auto-trim long contexts for efficiency |
-| **10** | Hierarchical Planning — Intent taxonomy, template engine, plan splitting |
-| **11** | Host Integration Security — path guards, secret scanner, symlink protection |
-| **12** | Identity Vault — enterprise secret management with Windows system keyring |
-| **13** | Plugin System — Open VSX Marketplace (30,000+ VSCode extensions), sandboxed |
-| **14** | Voice-to-Text — OS-level microphone capture → text via Rust audio pipeline |
-| **15** | Swarm Orchestration — Director-Worker agent topology with real-time HUD |
-| **16** | Fix-it Engine — automated playbook recovery on task failure |
-| **17** | Distributed Cluster Control — P2P node discovery for multi-machine swarms |
-| **18** | Perpetual Memory — semantic vector storage for long-term plan recall |
-| **19** | Browser Control — autonomous Playwright-based web navigation and interaction |
-| **20** | Multimodal Screen Perception — OS-level screenshot + AI-based UI element detection |
-| **21** | OS Mouse/Keyboard Control — hardware-level simulation via Enigo for full desktop automation |
-| **22** | Self-Evolving Engine — reads audit history, detects chronic failures, synthesizes new playbooks autonomously |
+**Aether Desktop Agent** is a standalone AI-powered autonomous agent that runs directly on your Windows desktop. Unlike cloud-based copilots, ADA works locally, coordinates multiple AI models, and can control your entire OS — from file operations and code editing to browser automation and visual screen control.
+
+ADA combines a high-performance **Rust core** with a **beautiful React + Electron UI** to provide a seamless experience for developers, power users, and AI enthusiasts.
 
 ---
 
-## 🖥️ Installation (Windows)
+## ✨ Key Features
 
-1. Download [`ADA-Installer.exe`](https://github.com/xa88/Aether-Desktop-Agent/releases)
-2. Run the installer — choose your installation directory
-3. (Optional) Select **Install Support Libraries** to auto-configure Node.js and Rust environments
+### 🧠 Intelligent Planning & Execution
+- **Dual AI Model Architecture** — Separate "Director" model for planning and "Worker" model for fast execution
+- **Hierarchical Task Planning** — Breaks complex goals into structured sub-tasks automatically
+- **Automated Error Recovery** — Detects failures and retries with alternative strategies
+
+### 🖥️ Full Desktop Control
+- **Screen Vision** — Captures and visually analyzes your screen to identify UI elements
+- **Mouse & Keyboard Control** — Simulates hardware-level input for complete desktop automation
+- **Browser Automation** — Navigates websites, fills forms, and extracts information autonomously
+
+### 💻 Integrated Development Environment
+- **Built-in Monaco Code Editor** — Full syntax highlighting and multi-language support
+- **Sandboxed Code Execution** — Run scripts safely in an isolated execution environment
+- **Integrated Terminal** — Real-time command execution with streaming output
+
+### 🤝 Multi-Agent Swarm
+- **Agent Orchestration** — Coordinate multiple specialized AI agents in parallel
+- **Real-time Swarm HUD** — Visual dashboard showing all active agents and task progress
+- **Director/Worker Protocol** — Intelligent routing between high-capability and fast models
+
+### 🔒 Security & Privacy
+- **Identity Vault** — Enterprise-grade secret management with Windows system keyring integration
+- **Audit Log** — Full timeline of every autonomous action for complete transparency
+- **Local-First** — All processing happens on your machine; no data sent to external servers
+
+### 🧩 Extensibility
+- **Plugin Marketplace** — Compatible with 30,000+ VSCode extensions
+- **Voice Control** — Microphone capture and voice-to-text for hands-free operation
+- **Perpetual Memory** — Learns from past operations to improve future performance
+- **Self-Evolution** — Analyzes its own performance and generates improved strategies
+
+---
+
+## 📦 Installation
+
+1. Download the latest [`ADA-Installer.exe`](https://github.com/xa88/Aether-Desktop-Agent/releases)
+2. Run the installer and select your installation directory
+3. Optionally enable **Install Support Libraries** to auto-configure required environments
 4. Launch **Aether Desktop Agent** from your Desktop shortcut
 
 ---
 
-## ⚙️ Configuration
+## ⚙️ First Launch Setup
 
-On first launch, navigate to the **Settings** tab to configure:
-- **API Key** and **Base URL** for your LLM provider (OpenAI, local LM Studio, etc.)
-- **Director Model** for high-level reasoning (recommended: `gpt-4o`)
-- **Worker Model** for fast execution (recommended: `phi-3-mini` or `llama-3-8b`)
+On first launch, open **Settings** to configure:
+- Your **LLM Provider** (OpenAI, Anthropic, or any OpenAI-compatible local server)
+- **Planning Model** — for deep reasoning tasks (e.g., GPT-4o)
+- **Execution Model** — for fast responses (e.g., GPT-4o-mini, Phi-3)
 
 ---
 
@@ -67,6 +75,6 @@ On first launch, navigate to the **Settings** tab to configure:
 
 This project is licensed under the **GNU General Public License v3.0 (GPLv3)**.
 
-You are free to use, study, and share this software. Any derivative work **must also be open-source** under GPLv3. Commercial proprietary forks are **not permitted**.
+Free to use, study, and share. Any derivative work **must also remain open-source under GPLv3**. Commercial proprietary forks are **not permitted**.
 
 Copyright © 2026 [xa88](https://github.com/xa88). All rights reserved.
