@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADA Design System Playground</title>
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="components.css">
+    <style>
+        body { padding: var(--ada-spacing-6); max-width: 1200px; margin: 0 auto; }
+        .section { margin-bottom: var(--ada-spacing-8); }
+        .flex-gap { display: flex; gap: var(--ada-spacing-4); flex-wrap: wrap; align-items: center; }
+        .panel { height: 400px; }
+    </style>
+</head>
+<body>
+    <h1>ADA UI/UX Pro Max Playground</h1>
+    
+    <div class="section">
+        <h2>Badges</h2>
+        <div class="flex-gap">
+            <span class="ada-badge success">SUCCESS</span>
+            <span class="ada-badge warning">WARNING</span>
+            <span class="ada-badge error">ERROR</span>
+            <span class="ada-badge info">INFO</span>
+            <span class="ada-badge risk">RISK</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Buttons</h2>
+        <div class="flex-gap">
+            <button class="ada-btn">Default Button</button>
+            <button class="ada-btn primary">Primary Button</button>
+            <button class="ada-btn danger">Danger Button</button>
+            <button class="ada-btn" disabled>Disabled</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Log Viewer (100k lines test)</h2>
+        <div id="log-container" class="panel"></div>
+    </div>
+
+    <div class="section">
+        <h2>Diff Viewer</h2>
+        <div id="diff-container"></div>
+    </div>
+
+    <div class="section">
+        <h2>Crash Dialog</h2>
+        <button class="ada-btn danger" onclick="crashDialog.show('LLM Connection Timeout', 'Error: connect ETIMEDOUT\n    at TCPConnectWrap.afterConnect')">Simulate Crash</button>
+    </div>
+
+    <script src="../renderer/components/log-viewer.js"></script>
+    <script src="../renderer/components/diff-viewer.js"></script>
+    <script src="../renderer/components/crash-dialog.js"></script>
+    <script>
+        // Log Viewer
+        const logViewer = new LogViewer('log-container');
+        const mockLogs = [];
+        const levels = ['INFO', 'WARN', 'ERROR', 'SUCCESS'];
+        for (let i = 0; i < 100000; i++) {
+            const r = Math.random();
+            const level = r > 0.95 ? 'ERROR' : r > 0.85 ? 'WARN' : r > 0.8 ? 'SUCCESS' : 'INFO';
+            mockLogs.push({ level, text: `[SysTime_10${i}] Executing mock function step ${i}...` });
+        }
+        logViewer.setLogs(mockLogs);
+
+        // Diff Viewer
+        const diffViewer = new DiffViewer('diff-container');
+        diffViewer.setDiff([
+            { type: 'unchanged', text: 'function setupPlugin() {' },
+            { type: 'remove', text: '    const manifest = load();' },
+            { type: 'add', text: '    const manifest = await loadAsync();' },
+            { type: 'add', text: '    verifySignature(manifest);' },
+            { type: 'unchanged', text: '}' }
+        ]);
+
+        // Crash Dialog
+        const crashDialog = new CrashDialog();
+    </script>
+</body>
+</html>

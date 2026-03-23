@@ -1,0 +1,18 @@
+[package]
+name    = "ada-adapter-vision"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ada-tool-api = { path = "../../core/tool_api" }
+ada-core-ui  = { path = "../../core/ui" }
+serde        = { workspace = true }
+serde_json   = { workspace = true }
+anyhow       = { workspace = true }
+async-trait  = { workspace = true }
+tokio        = { workspace = true }
+tracing      = { workspace = true }
+scrap        = "0.5"
+image        = "0.24"
+base64       = "0.21"
+enigo        = "0.1.2"

@@ -1,0 +1,13 @@
+[package]
+name    = "ada-core-voice-dialogue"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ada-adapter-voice = { path = "../../../adapters/voice" }
+ada-tool-api      = { path = "../../tool_api" }
+anyhow            = { workspace = true }
+tokio             = { workspace = true }
+tracing           = { workspace = true }
+serde             = { workspace = true }
+async-trait       = { workspace = true }

@@ -1,0 +1,23 @@
+[package]
+name    = "ada-orchestrator"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ada-tool-api   = { path = "../tool_api" }
+ada-executor   = { path = "../executor" }
+ada-llm        = { path = "../llm" }
+ada-playbooks  = { path = "../playbooks" }
+ada-cache      = { path = "../cache" }
+ada-compression = { path = "../compression" }
+ada-audit       = { path = "../audit" }
+serde           = { workspace = true }
+serde_json      = { workspace = true }
+serde_yaml      = { workspace = true }
+anyhow          = { workspace = true }
+async-trait    = { workspace = true }
+tokio          = { workspace = true }
+tracing        = { workspace = true }
+uuid           = { workspace = true }
+chrono         = { workspace = true }
+hostname       = "0.4"

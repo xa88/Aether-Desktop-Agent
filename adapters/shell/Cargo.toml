@@ -1,0 +1,14 @@
+[package]
+name    = "ada-adapter-shell"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ada-tool-api = { path = "../../core/tool_api" }
+ada-policy   = { path = "../../core/policy" }
+serde        = { workspace = true }
+serde_json   = { workspace = true }
+anyhow       = { workspace = true }
+async-trait  = { workspace = true }
+tokio        = { workspace = true }
+tracing      = { workspace = true }

@@ -1,0 +1,15 @@
+[package]
+name    = "ada-cache"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde       = { workspace = true }
+serde_json  = { workspace = true }
+anyhow      = { workspace = true }
+rusqlite    = { workspace = true }
+sha2        = { workspace = true }
+hex         = { workspace = true }
+chrono      = { workspace = true }
+tracing     = { workspace = true }
+lazy_static = "1.4"

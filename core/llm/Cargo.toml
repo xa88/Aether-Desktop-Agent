@@ -1,0 +1,17 @@
+[package]
+name    = "ada-llm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ada-tool-api = { path = "../tool_api" }
+serde        = { workspace = true }
+serde_json   = { workspace = true }
+anyhow       = { workspace = true }
+thiserror    = { workspace = true }
+async-trait  = { workspace = true }
+tokio        = { workspace = true }
+reqwest      = { workspace = true }
+futures      = { workspace = true }
+tracing      = { workspace = true }
+handlebars   = "4"

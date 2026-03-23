@@ -1,0 +1,60 @@
+/* Reset & Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ada-font-family-base);
+  font-size: var(--ada-font-size-base);
+  color: var(--ada-text-primary);
+  background-color: var(--ada-bg-base);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--ada-color-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+code, pre {
+  font-family: var(--ada-font-family-mono);
+  font-size: var(--ada-font-size-sm);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ada-text-primary);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: var(--ada-spacing-2);
+}
+
+h1 { font-size: 24px; }
+h2 { font-size: 20px; }
+h3 { font-size: var(--ada-font-size-lg); }
+
+input, button, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--ada-border-light);
+  border-radius: var(--ada-radius-md);
+  border: 2px solid var(--ada-bg-base);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--ada-text-tertiary);
+}

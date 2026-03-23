@@ -1,0 +1,16 @@
+[package]
+name    = "ada-adapter-voice"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cpal         = "0.15"
+hound        = "3.5"
+ringbuf      = "0.3"
+anyhow       = { workspace = true }
+tokio        = { workspace = true }
+tracing      = { workspace = true }
+serde        = { workspace = true }
+serde_json   = { workspace = true }
+async-trait  = { workspace = true }
+# whisper-rs = "0.10" # We will use a mock or lazy-load bindgen

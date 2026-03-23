@@ -1,0 +1,101 @@
+{
+    "name": "aether-desktop-agent",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "ADA (Aether Desktop Agent) - Autonomous AI Agent for Desktop",
+    "main": "src/main.js",
+    "scripts": {
+        "start": "npm run vite:build && electron .",
+        "dev": "npm run vite:build && electron .",
+        "vite:dev": "vite",
+        "vite:build": "vite build",
+        "build": "npm run vite:build && electron-builder",
+        "build:win": "electron-builder --win",
+        "build:mac": "electron-builder --mac",
+        "build:linux": "electron-builder --linux"
+    },
+    "keywords": [
+        "AI",
+        "Agent",
+        "Desktop",
+        "Automation"
+    ],
+    "author": "Antigravity",
+    "license": "MIT",
+    "build": {
+        "appId": "ai.antigravity.aether-desktop-agent",
+        "productName": "Aether Desktop Agent",
+        "artifactName": "ADA-${version}-${os}-${arch}.${ext}",
+        "directories": {
+            "output": "../dist"
+        },
+        "win": {
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "x64",
+                        "arm64"
+                    ]
+                }
+            ],
+            "icon": "assets/icon.ico"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true,
+            "createDesktopShortcut": true,
+            "createStartMenuShortcut": true,
+            "shortcutName": "Aether Desktop Agent",
+            "include": "build/installer.nsh",
+            "installerIcon": "assets/icon.ico",
+            "uninstallerIcon": "assets/icon.ico",
+            "runAfterFinish": true
+        },
+        "mac": {
+            "target": [
+                {
+                    "target": "dmg",
+                    "arch": [
+                        "arm64",
+                        "x64"
+                    ]
+                }
+            ],
+            "icon": "assets/icon.icns",
+            "hardenedRuntime": true,
+            "gatekeeperAssess": false,
+            "entitlements": "assets/entitlements.mac.plist",
+            "entitlementsInherit": "assets/entitlements.mac.plist"
+        },
+        "linux": {
+            "target": [
+                "AppImage",
+                "deb"
+            ],
+            "icon": "assets/icon.png",
+            "category": "Development"
+        },
+        "afterSign": "scripts/notarize.js"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "^4.3.0",
+        "autoprefixer": "^10.4.0",
+        "electron": "^33.0.0",
+        "electron-builder": "^24.13.0",
+        "postcss": "^8.4.0",
+        "tailwindcss": "^3.4.0",
+        "vite": "^6.0.0"
+    },
+    "dependencies": {
+        "clsx": "^2.1.1",
+        "framer-motion": "^11.11.0",
+        "lucide-react": "^0.454.0",
+        "monaco-editor": "^0.52.0",
+        "react": "^18.3.0",
+        "react-dom": "^18.3.0",
+        "tailwind-merge": "^2.5.4",
+        "xterm": "^5.3.0",
+        "xterm-addon-fit": "^0.8.0"
+    }
+}

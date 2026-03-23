@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ADA - Embedded IDE</title>
+    <!-- Use Monaco from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.43.0/min/vs/loader.min.js"></script>
+    <script>
+        require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.43.0/min/vs' } });
+    </script>
+    <link rel="stylesheet" href="../components/LogViewer/LogViewer.css" />
+    <link rel="stylesheet" href="../components/SettingsPanel/SettingsPanel.css" />
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: sans-serif;
+            background: #1e1e1e;
+        }
+
+        #app {
+            display: flex;
+            height: 100vh;
+        }
+
+        #sidebar {
+            width: 250px;
+            background: #252526;
+            color: #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+            border-right: 1px solid #333;
+            overflow-y: auto;
+        }
+
+        #editor-container {
+            flex: 1;
+        }
+
+        .file-item {
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+        }
+
+        .file-item:hover {
+            background: #37373d;
+            color: #fff;
+        }
+
+        .file-item.active {
+            background: #004a77;
+            color: #fff;
+        }
+
+        .header {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+        }
+
+        button {
+            background: #007acc;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #0098ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="settings-root" style="display: none;"></div>
+        <div id="sidebar">
+            <div class="header">Explorer <button id="btn-open-settings" style="float: right; margin: 0; padding: 2px; width: 30px;">⚙️</button></div>
+            <div id="file-tree">
+                <div class="file-item" data-path="core/cli/src/main.rs">📝 core/cli/src/main.rs</div>
+            </div>
+            <button id="save-btn">Save File (Ctrl+S)</button>
+        </div>
+        <div id="main-content" style="flex: 1; display: flex; flex-direction: column;">
+            <div id="editor-container" style="flex: 2;"></div>
+            <div id="log-viewer" style="flex: 1; border-top: 1px solid #444;"></div>
+        </div>
+    </div>
+
+    <script src="./editor.js"></script>
+    <script type="module">
+        import { LogViewer } from '../components/LogViewer/LogViewer.js';
+        import { SettingsPanel } from '../components/SettingsPanel/SettingsPanel.js';
+        
+        const lv = new LogViewer('log-viewer');
+        const sp = new SettingsPanel('settings-root');
+        
+        document.getElementById('btn-open-settings').addEventListener('click', () => {
+            sp.show();
+        });
+        
+        // Listen natively to Rust tracing buffers emitted over IPC
+        window.ada.onPlanStdout((event, text) => {
+            lv.appendLog({ tool: 'ada-cli', action: 'stdout', result: text.trim() });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+:root {
+  /* Colors - Light Theme (Default) */
+  --ada-bg-base: #f8fafc;
+  --ada-bg-surface: #ffffff;
+  --ada-bg-surface-hover: #f1f5f9;
+  
+  --ada-text-primary: #0f172a;
+  --ada-text-secondary: #475569;
+  --ada-text-tertiary: #94a3b8;
+  
+  --ada-border-light: #e2e8f0;
+  --ada-border-focus: #3b82f6;
+
+  /* Brand / State Colors */
+  --ada-color-primary: #3b82f6;
+  --ada-color-primary-hover: #2563eb;
+  --ada-color-success: #10b981;
+  --ada-color-success-bg: #d1fae5;
+  --ada-color-warning: #f59e0b;
+  --ada-color-warning-bg: #fef3c7;
+  --ada-color-error: #ef4444;
+  --ada-color-error-bg: #fee2e2;
+  --ada-color-info: #6366f1;
+  --ada-color-info-bg: #e0e7ff;
+  --ada-color-risk: #8b5cf6;
+  --ada-color-risk-bg: #ede9fe;
+
+  /* Typography */
+  --ada-font-family-base: 'Inter', -apple-system, system-ui, sans-serif;
+  --ada-font-family-mono: 'JetBrains Mono', 'Consolas', monospace;
+  
+  --ada-font-size-xs: 12px;
+  --ada-font-size-sm: 13px;
+  --ada-font-size-base: 14px;
+  --ada-font-size-lg: 16px;
+  --ada-font-size-xl: 20px;
+
+  /* Spacing */
+  --ada-spacing-1: 4px;
+  --ada-spacing-2: 8px;
+  --ada-spacing-3: 12px;
+  --ada-spacing-4: 16px;
+  --ada-spacing-6: 24px;
+  --ada-spacing-8: 32px;
+
+  /* Border Radius & Shadows */
+  --ada-radius-sm: 4px;
+  --ada-radius-md: 8px;
+  --ada-radius-lg: 12px;
+  
+  --ada-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ada-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --ada-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Z-Index */
+  --ada-z-base: 1;
+  --ada-z-dropdown: 100;
+  --ada-z-modal: 1000;
+  --ada-z-tooltip: 2000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Colors - Dark Theme */
+    --ada-bg-base: #0f172a;
+    --ada-bg-surface: #1e293b;
+    --ada-bg-surface-hover: #334155;
+    
+    --ada-text-primary: #f8fafc;
+    --ada-text-secondary: #cbd5e1;
+    --ada-text-tertiary: #64748b;
+    
+    --ada-border-light: #334155;
+    --ada-border-focus: #60a5fa;
+
+    /* Brand / State Colors (Adjusted for Dark Mode contrast) */
+    --ada-color-primary: #3b82f6;
+    --ada-color-primary-hover: #60a5fa;
+    --ada-color-success: #10b981;
+    --ada-color-success-bg: rgba(16, 185, 129, 0.2);
+    --ada-color-warning: #f59e0b;
+    --ada-color-warning-bg: rgba(245, 158, 11, 0.2);
+    --ada-color-error: #ef4444;
+    --ada-color-error-bg: rgba(239, 68, 68, 0.2);
+    --ada-color-info: #6366f1;
+    --ada-color-info-bg: rgba(99, 102, 241, 0.2);
+    --ada-color-risk: #8b5cf6;
+    --ada-color-risk-bg: rgba(139, 92, 246, 0.2);
+    
+    --ada-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+    --ada-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --ada-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  }
+}

@@ -1,0 +1,116 @@
+/* Common Components */
+
+/* Badge */
+.ada-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--ada-spacing-2);
+  border-radius: var(--ada-radius-sm);
+  font-size: var(--ada-font-size-xs);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.ada-badge.success { background-color: var(--ada-color-success-bg); color: var(--ada-color-success); }
+.ada-badge.warning { background-color: var(--ada-color-warning-bg); color: var(--ada-color-warning); }
+.ada-badge.error { background-color: var(--ada-color-error-bg); color: var(--ada-color-error); }
+.ada-badge.info { background-color: var(--ada-color-info-bg); color: var(--ada-color-info); }
+.ada-badge.risk { background-color: var(--ada-color-risk-bg); color: var(--ada-color-risk); }
+
+/* Button */
+.ada-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ada-spacing-2) var(--ada-spacing-4);
+  border-radius: var(--ada-radius-md);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  background-color: var(--ada-bg-surface);
+  color: var(--ada-text-primary);
+  border-color: var(--ada-border-light);
+}
+.ada-btn:hover {
+  background-color: var(--ada-bg-surface-hover);
+}
+.ada-btn:active {
+  transform: translateY(1px);
+}
+.ada-btn.primary {
+  background-color: var(--ada-color-primary);
+  color: white;
+  border-color: transparent;
+}
+.ada-btn.primary:hover {
+  background-color: var(--ada-color-primary-hover);
+}
+.ada-btn.danger {
+  background-color: var(--ada-color-error);
+  color: white;
+}
+.ada-btn.danger:hover {
+  background-color: #dc2626;
+}
+.ada-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Card / Surface */
+.ada-card {
+  background-color: var(--ada-bg-surface);
+  border: 1px solid var(--ada-border-light);
+  border-radius: var(--ada-radius-md);
+  box-shadow: var(--ada-shadow-sm);
+  padding: var(--ada-spacing-4);
+}
+
+/* Dialog Overlay */
+.ada-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--ada-z-modal);
+  backdrop-filter: blur(2px);
+}
+
+.ada-dialog {
+  background-color: var(--ada-bg-surface);
+  border-radius: var(--ada-radius-lg);
+  box-shadow: var(--ada-shadow-lg);
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  border: 1px solid var(--ada-border-light);
+  display: flex;
+  flex-direction: column;
+}
+.ada-dialog-header {
+  padding: var(--ada-spacing-4);
+  border-bottom: 1px solid var(--ada-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ada-dialog-header h3 {
+  margin: 0;
+}
+.ada-dialog-content {
+  padding: var(--ada-spacing-4);
+  overflow-y: auto;
+  max-height: 60vh;
+}
+.ada-dialog-footer {
+  padding: var(--ada-spacing-3) var(--ada-spacing-4);
+  background-color: var(--ada-bg-base);
+  border-top: 1px solid var(--ada-border-light);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--ada-spacing-2);
+}

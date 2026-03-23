@@ -1,0 +1,33 @@
+id: 'stress-test-heavy'
+description: 'High-load system verification with recursion and web research'
+matches:
+  - 'run stress test'
+  - 'heavy load'
+fix_steps:
+  - id: 'step-1'
+    type: 'shell_run'
+    action: 'execute'
+    params:
+      command: 'echo "Starting Stress Test..." && for /L %i in (1,1,20) do (echo Step %i && timeout /t 1 >nul)'
+  - id: 'step-2'
+    type: 'web_search_tavily'
+    action: 'execute'
+    params:
+      query: 'Aether Desktop Agent autonomous capabilities and performance benchmarks'
+  - id: 'step-3'
+    type: 'fs_write'
+    action: 'execute'
+    params:
+      path: 'runs/stress_log.txt'
+      content: 'STRESS TEST LOG ENTRY: System remains stable under concurrent shell and search load.'
+  - id: 'step-4'
+    type: 'local_search'
+    action: 'execute'
+    params:
+      query: 'STRESS TEST'
+check_steps:
+  - id: 'check-1'
+    type: 'shell_run'
+    action: 'execute'
+    params:
+      command: 'dir runs\\stress_log.txt'
